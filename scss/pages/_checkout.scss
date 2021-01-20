@@ -1,0 +1,376 @@
+/*....checkout page
+...........................*/
+.section_checkout {
+  padding: 8rem 0 3rem;
+  background: bg("checkout-bg.jpg") repeat-y top center;
+  background-size: 100%;
+
+  &_heading {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    @include margin(bottom, 2);
+    flex-wrap: wrap;
+
+    h3 {
+      flex-basis: 40%;
+      text-transform: uppercase;
+      color: color(primary-dark);
+    }
+
+    ul {
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+
+      li {
+        font-size: $fs-sm;
+        font-weight: weight(bold);
+        text-align: center;
+        color: color(accent-light);
+        padding: 0.25em 2rem;
+        margin: 0 0.25rem;
+        @include border(bottom, 3px, currentcolor);
+
+        &.active {
+          color: color(primary);
+        }
+      }
+    }
+  }
+
+  &_wrap {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    justify-content: space-between;
+    align-items: flex-start;
+    grid-gap: 0;
+
+    @include media(">=md") {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    & > * {
+      height: 100%;
+    }
+
+    .span2 {
+      grid-column: span 2;
+    }
+
+    .form_box {
+      @include set-background(color(white));
+      padding: 1.75rem 1rem;
+      @include bd-radius(0.25rem);
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: 1fr;
+      justify-content: space-between;
+      align-items: flex-start;
+      grid-gap: 1.75rem;
+
+      @include media(">=sm") {
+        padding: 1.75rem 2rem;
+        &.split2 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      @include media(">=md") {
+        padding: 1.75rem 1rem;
+        &.split2 {
+          grid-template-columns: 1fr;
+        }
+      }
+      @include media(">=800px") {
+        padding: 1.75rem 2rem;
+        &.split2 {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      .heading {
+        font-size: 1rem;
+        text-transform: uppercase;
+        @include margin(bottom, 1.75);
+        font-weight: weight(bold);
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 50%;
+          width: 100%;
+          height: 1px;
+          background: color(border);
+        }
+
+        span {
+          background: color(white);
+          position: relative;
+          z-index: 1;
+          @include padding(right, 1);
+        }
+      }
+
+      .form_container {
+        .cart {
+          @include padding(right, 0.5);
+        }
+        p {
+          font-size: $fs-sm;
+          color: color(accent-light);
+        }
+        .btn {
+          @include bd-radius(0.25rem);
+          font-size: 1rem;
+          margin: 1rem 0;
+          padding: 0.5rem 1.25rem;
+          display: block;
+        }
+      }
+
+      .cards_icon {
+        @include margin(bottom, 1.25);
+        text-align: right;
+
+        p {
+          font-size: $fs-xs;
+          color: color(secondary-light);
+          @include margin(bottom, 0.5);
+        }
+      }
+    }
+
+    .product_box {
+      @include set-background(color(primary));
+      padding: 1.75rem 2rem;
+      @include bd-radius(0.25rem);
+      text-align: center;
+
+      .heading {
+        font-size: 1rem;
+        text-transform: uppercase;
+        @include margin(bottom, 0.5);
+        font-weight: weight(bold);
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          right: 0;
+          top: 50%;
+          width: 100%;
+          height: 1px;
+          background: color(secondary);
+        }
+
+        span {
+          background: color(primary);
+          position: relative;
+          z-index: 1;
+          padding: 0 1rem;
+        }
+      }
+
+      @include media(">=480px") {
+        .prod {
+          max-width: 260px;
+        }
+      }
+
+      .prod-name {
+        font-size: 1rem;
+        text-transform: uppercase;
+        @include margin(bottom, 1);
+        @include padding(bottom, 1.75);
+        font-weight: weight(bold);
+        text-align: center;
+        @include border(bottom, 1px, color(white));
+      }
+
+      .bottom {
+        padding: 1.125rem 2rem;
+        background: bg("leaf-left.png") no-repeat 0 0,
+          bg("leaf-right.png") no-repeat 100% 0;
+
+        p {
+          font-size: $fs-sm;
+          line-height: 1.4;
+          font-weight: weight(medium);
+          color: color(white);
+          text-transform: uppercase;
+          text-align: center;
+        }
+        .star {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          @include margin(top, 1);
+
+          li {
+            color: #ffc107;
+            padding: 0 2px;
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .summary {
+        padding: 1.375rem 0;
+        @include border(top, 1px, color(border));
+        @include border(bottom, 1px, color(border));
+        @include content-gap(1.125);
+
+        p {
+          font-size: 1rem;
+          text-align: left;
+          font-size: $fs-sm;
+
+          span {
+            float: right;
+          }
+        }
+
+        p:first-of-type {
+          font-size: 1rem;
+          text-transform: uppercase;
+          font-weight: weight(medium);
+        }
+      }
+
+      .prod_list {
+        margin: 1.375rem 0;
+        @include padding(bottom, 1.375);
+        @include border(bottom, 1px, color(border));
+
+        li {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .img {
+            flex-basis: 40%;
+            img {
+              max-width: 100px;
+            }
+          }
+          .details {
+            @include padding(left, 1);
+            @include content-gap();
+
+            p {
+              text-align: left;
+              font-size: $fs-sm;
+              text-transform: uppercase;
+              font-weight: weight(medium);
+
+              span {
+                float: right;
+              }
+            }
+          }
+        }
+      }
+
+      p.shipping {
+        font-size: $fs-sm;
+        font-weight: weight(medium);
+
+        img {
+          @include padding(right, 0.5);
+        }
+      }
+
+      #countdown {
+        ul {
+          display: grid;
+          grid-template-rows: auto;
+          grid-template-columns: repeat(4, 1fr);
+          justify-content: space-between;
+          align-items: center;
+          grid-gap: 1.5rem;
+          padding: 0.5rem 0 1.375rem;
+
+          li {
+            @include set-background(color(secondary));
+            @include bd-radius(0.25rem);
+            @include padding(bottom, 0.25);
+            font-size: $fs-sm;
+            text-transform: uppercase;
+            position: relative;
+
+            span {
+              font-size: 2rem;
+              display: block;
+              line-height: 1.2;
+            }
+          }
+
+          li + li:before {
+            content: ":";
+            position: absolute;
+            left: -1rem;
+            top: 0.5rem;
+            font-size: 2.5rem;
+            color: color(white);
+            line-height: 1;
+          }
+        }
+      }
+    }
+
+    .card_box {
+      @include set-background(color(white));
+
+      .heading {
+        font-size: 1rem;
+        text-transform: uppercase;
+        margin-bottom: 1.75em;
+        font-weight: 700;
+        position: relative;
+      }
+
+      .tag {
+        font-size: $fs-xs;
+        color: color(secondary-light);
+
+        img {
+          width: 1rem;
+          vertical-align: middle;
+          @include padding(left, 0.25);
+        }
+      }
+
+      .card_details {
+        @include set-background(color(secondary-light));
+        @include bd-radius(0.25rem);
+        padding: 1rem;
+        margin: 0.5rem 0 1rem;
+        min-height: 210px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+
+        p {
+          width: 100%;
+          font-size: 1.125rem;
+          @include margin(top, 0.5);
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          span.small {
+            font-size: $fs-xs;
+            display: block;
+          }
+        }
+      }
+      img.card {
+        width: 100%;
+      }
+    }
+  }
+}

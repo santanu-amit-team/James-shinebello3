@@ -1,0 +1,212 @@
+/*....warrenty-hero section
+...........................*/
+.hero_warrenty {
+  background: bg("warrenty-bg.jpg") no-repeat top center;
+  background-size: cover;
+
+  &_wrap {
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-columns: 1fr;
+    justify-content: space-between;
+    align-items: flex-start;
+    grid-gap: 2rem;
+
+    @include media(">=md") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .left {
+      display: none;
+      img {
+        margin-top: auto;
+      }
+      @include media(">=md") {
+        height: 100%;
+        display: flex;
+        position: relative;
+      }
+
+      .more {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        text-transform: uppercase;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: weight(medium);
+
+        img {
+          width: 3.5rem;
+          @include padding(right, 0.5);
+        }
+      }
+    }
+
+    .right {
+      padding: 4rem 0;
+
+      h2 {
+        font-size: 2rem;
+        font-size: clamp(2rem, 4vw, 2.875rem);
+        text-transform: uppercase;
+        color: color(white);
+        @include margin(bottom, 0.25);
+        span {
+          font-size: 2rem;
+          font-size: clamp(1.5rem, 4vw, 1.875rem);
+        }
+      }
+      p {
+        color: color(white);
+        font-size: 1.25rem;
+        font-size: clamp(1rem, 2vw, 1.25rem);
+      }
+      .img_box {
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr;
+        justify-content: space-between;
+        align-items: flex-start;
+        grid-gap: 1.5rem;
+        @include margin(top, 1.5);
+
+        @include media(">=sm") {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        & > * {
+          text-align: center;
+
+          .price {
+            font-size: 3rem;
+            line-height: 1.2;
+            color: color(clr-shade1);
+            font-weight: weight(bold);
+          }
+          .small {
+            font-size: $fs-sm;
+            color: color(clr-shade1);
+            text-transform: uppercase;
+          }
+          .btn-secondary {
+            @include set-background(color(clr-shade1));
+            @include margin(top, 1);
+            font-weight: weight(bold);
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+/*....why section
+...........................*/
+.section_why {
+  @include set-background(color(bg-light));
+  text-align: center;
+  padding: 2.5rem 0 3rem;
+
+  &_wrap {
+    h3 {
+      font-size: 1.75rem;
+      font-size: clamp(1.75rem, 4vw, 2.25rem);
+      font-weight: weight(regular);
+      color: color(accent-dark);
+    }
+    h1 {
+      color: color(accent-dark);
+      line-height: 1;
+      @include margin(bottom, 0.5);
+    }
+    ul {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 3rem 0;
+      flex-wrap: wrap;
+
+      li {
+        @include set-background(color(white));
+        @include box-shadow(2px, 2px, 5px, rgba(0, 0, 0, 0.2));
+        @include size(7.5rem);
+        @include bd-radius(50%);
+        text-align: center;
+        padding: 0.5rem;
+        margin: 0 0.75rem;
+        color: color(accent-light);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        span {
+          display: block;
+          font-size: 0.875rem;
+          line-height: 1.2;
+          @include margin(top, 0.25);
+        }
+      }
+
+      @include media(">=sm") {
+        li + li {
+          @include margin(left, 2);
+        }
+      }
+    }
+    .btn {
+      padding: 0.5rem 2rem;
+      @include media(">=sm") {
+        padding: 0.5rem 2.75rem;
+      }
+    }
+  }
+}
+
+/*....about section
+...........................*/
+.warrenty_about {
+  padding: 3rem 0 0;
+
+  &_wrap {
+    .about_box {
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: 1fr;
+      justify-content: space-between;
+      align-items: center;
+      grid-gap: 1.75rem;
+      @include margin(bottom, 3);
+
+      @include media(">=sm") {
+        grid-template-columns: repeat(2, 1fr);
+
+        .order1 {
+          grid-row: 1 /2;
+        }
+      }
+
+      .content {
+        @include content-gap();
+
+        h3 {
+          color: color(accent-dark);
+        }
+        p {
+          color: color(accent-light);
+        }
+      }
+
+      .img {
+        height: 100%;
+        img {
+          @include size(100%);
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

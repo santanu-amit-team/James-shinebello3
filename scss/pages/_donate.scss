@@ -1,0 +1,170 @@
+/*....hero-donate section
+...........................*/
+.hero_donate {
+  background: bg("hero_donate_bg.jpg") no-repeat top center;
+  background-size: cover;
+
+  &_wrap {
+    .donate_top {
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: 1fr;
+      justify-content: space-between;
+      align-items: center;
+      grid-gap: 3rem;
+      padding: 1rem 0;
+
+      @include media(">=md") {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      h2 {
+        font-size: 2rem;
+        font-size: clamp(2rem, 6vw, 2.875rem);
+        text-transform: uppercase;
+        color: color(primary);
+        @include margin(bottom, 0.25);
+      }
+
+      p {
+        font-size: 1.25rem;
+        font-size: clamp(1rem, 2vw, 1.25rem);
+      }
+
+      .right {
+        min-height: 350px;
+        background: bg("tree.png") no-repeat center;
+        background-size: contain;
+        display: flex;
+        justify-content: space-between;
+        padding: 2rem 0;
+        flex-direction: column;
+
+        @include media(">=sm") {
+          flex-direction: row;
+        }
+
+        & > * {
+          @include set-background(color(secondary));
+          @include size(7.5rem);
+          @include bd-radius(50%);
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+
+          h4 {
+            font-size: 1.5rem;
+          }
+          p {
+            font-size: 0.688rem;
+            line-height: 1.2;
+          }
+        }
+
+        .second {
+          align-self: flex-end;
+        }
+      }
+    }
+
+    .donate_bottom {
+      display: grid;
+      grid-template-rows: auto;
+      grid-template-columns: 1fr;
+      justify-content: space-between;
+      align-items: center;
+      grid-gap: 1.5rem;
+      padding: 1.5rem 0;
+
+      @include media(">=sm") {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include media(">=lg") {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .donate_box {
+        @include set-background(color(white));
+        padding: 1.5rem 1rem;
+        text-align: center;
+        box-shadow: 2px 1px 10px rgba(0, 0, 0, 0.2);
+        transition: all ease-in-out 0.5s;
+
+        .title {
+          font-size: 1.5rem;
+          text-transform: uppercase;
+          font-weight: weight(bold);
+        }
+        .price {
+          color: color(secondary);
+          font-size: 1.5rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          .input-group {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background-color: color(white);
+            border: 1px solid color(primary);
+            border-radius: 0.25rem;
+            margin: 0 0.5rem;
+
+            .form-control {
+              padding: 0.25rem 1rem;
+              font-size: 1rem;
+              font-weight: 400;
+              line-height: 1.5;
+              background-color: color(white);
+              border: 0;
+              -webkit-appearance: none;
+              -appearance: none;
+            }
+
+            span {
+              @include set-background(color(primary));
+              font-size: 1rem;
+              padding: 0.25rem;
+            }
+          }
+        }
+        .option {
+          color: color(accent-light);
+          font-size: $fs-xs;
+          @include margin(bottom, 1.125);
+        }
+
+        .btn {
+          font-weight: weight(bold);
+        }
+
+        &.active {
+          .btn {
+            @include set-background(color(primary));
+
+            &:before {
+              content: "\f058";
+              position: absolute;
+              left: 10px;
+              top: 7px;
+              font-family: "Font Awesome 5 Free";
+              font-size: 1rem;
+              font-weight: weight(bold);
+              color: color(success);
+            }
+          }
+        }
+
+        &:hover {
+          transform: scale(1.1);
+          transition: all ease-in-out 0.5s;
+        }
+      }
+    }
+  }
+}

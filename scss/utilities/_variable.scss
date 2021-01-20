@@ -1,0 +1,98 @@
+// Color theme
+
+$primary: #007184 !default;
+$primary-dark: #254555 !default;
+$secondary: #2bc5ec !default;
+$secondary-light: #ced6de !default;
+$accent: #555555 !default;
+$accent-light: #848589 !default;
+$accent-dark: #323232 !default;
+$bg: #ecedef !default;
+$bg-light: #f7f7f7 !default;
+$light: #fcfcfc !default;
+$dark: #000 !default;
+$white: #fff !default;
+$border: #b0b0b0 !default;
+
+$error: #e15252 !default;
+$success: #06c167 !default;
+$warning: #ffc107 !default;
+
+$clr-shade1: #fff986 !default;
+
+// Links
+
+$link-color: #555555 !default;
+$link-hover-color: $secondary !default;
+
+//user changes theme colors:
+$color: (
+  primary: $primary,
+  primary-dark: $primary-dark,
+  secondary: $secondary,
+  secondary-light: $secondary-light,
+  accent: $accent,
+  accent-light: $accent-light,
+  accent-dark: $accent-dark,
+  link: $link-color,
+  link-hover: $link-hover-color,
+  bg: $bg,
+  bg-light: $bg-light,
+  light: $light,
+  dark: $dark,
+  white: $white,
+  border: $border,
+  error: $error,
+  success: $success,
+  warning: $warning,
+  clr-shade1: $clr-shade1,
+) !default;
+
+// font-family
+
+$ff-base: "Ubuntu", sans-serif;
+$ff-heading: "Ubuntu", sans-serif;
+
+// Typography
+
+$spacer: 5rem;
+$fs-base: 1rem !default; // Assumes the browser default, typically `16px`
+
+$lh-base: 1.6 !default;
+$lh-heading: 1.2 !default;
+
+$h1: $fs-base * 2.5 !default;
+$h2: $fs-base * 2 !default;
+$h3: $fs-base * 1.75 !default;
+$h4: $fs-base * 1.5 !default;
+$h5: $fs-base * 1.25 !default;
+$h6: $fs-base !default;
+$fs-sm: $fs-base * 0.875 !default;
+$fs-xs: $fs-base * 0.75 !default;
+
+// font-weight
+$weight: (
+  thin: 100,
+  exlight: 200,
+  light: 300,
+  regular: 400,
+  medium: 500,
+  smbold: 600,
+  bold: 700,
+  exbold: 800,
+  black: 900,
+);
+
+// This variable affects the `.h-*` and `.w-*` classes.
+$sizes: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$sizes: map-merge(
+  (
+    25: 25%,
+    50: 50%,
+    75: 75%,
+    100: 100%,
+    auto: auto,
+  ),
+  $sizes
+);
